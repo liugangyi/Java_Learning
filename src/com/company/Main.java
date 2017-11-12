@@ -1,14 +1,29 @@
 package com.company;
-import static com.company.Container.*;
+import com.company.Container.*;
+import com.company.Tank.*;
+import com.company.RandomGenerate.*;
 
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        test_map();
-        test_iterator();
-        test_set();
+        //test_container();
+        //test_operator();
         test_random();
-        test_queue();
+    }
+
+    static void test_container() {
+        Container container = new Container();
+        container.output();
+    }
+
+    static void test_operator() {
+        Operator op = new Operator();
+        op.test_assign_operator();
+    }
+
+    static void test_random() {
+        RandomGenerate rand = new RandomGenerate();
+        rand.test_random();
     }
 }

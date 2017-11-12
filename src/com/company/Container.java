@@ -3,7 +3,14 @@ package com.company;
 import java.util.*;
 
 public class Container {
-    public static void test_queue() {
+    public void output() {
+        test_queue();
+        test_iterator();
+        test_iterator();
+        test_random();
+        test_set();
+    }
+    private void test_queue() {
         Queue<Character> queue = new LinkedList<>();
         for (char c : "my name is lgy".toCharArray())
             queue.offer(c);
@@ -24,7 +31,7 @@ public class Container {
         System.out.println(queue);
     }
 
-    public static void test_random() {
+    private void test_random() {
         Random rand = new Random(47);
         Map<Integer, Integer> map = new HashMap<>();
 
@@ -37,7 +44,7 @@ public class Container {
         System.out.println(map.toString());
     }
 
-    public static void test_map() {
+    private void test_map() {
         Map<String, String> map = new HashMap<>();
         map.put("1", "abc");
         map.put("2", "bcd");
@@ -48,7 +55,7 @@ public class Container {
             System.out.println(entry);
     }
 
-    public static void test_iterator() {
+    private void test_iterator() {
         Collection<Integer> collection = new ArrayList<>(Arrays.asList(1,2,3,4,5));
         System.out.println(collection.toString());
         display(collection.iterator());
@@ -58,13 +65,13 @@ public class Container {
         display(list.listIterator());
     }
 
-    private static void display(Iterator<Integer> it) {
+    private void display(Iterator<Integer> it) {
         while(it.hasNext()) {
             System.out.println(it.next());
         }
     }
 
-    public static void test_set() {
+    private void test_set() {
         Set<Integer> set1 = new HashSet<>();
         Collections.addAll(set1, 1, 2, 3, 4, 5);
         System.out.println(set1.toString());
