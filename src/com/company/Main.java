@@ -8,8 +8,8 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         //test_container();
-        //test_operator();
-        test_random();
+        test_operator();
+        //test_random();
     }
 
     static void test_container() {
@@ -20,6 +20,10 @@ public class Main {
     static void test_operator() {
         Operator op = new Operator();
         op.test_assign_operator();
+        op.test_equals();
+        op.test_direct_constent();
+        op.test_index_number();
+        op.test_bit_operator();
     }
 
     static void test_random() {
