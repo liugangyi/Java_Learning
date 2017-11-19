@@ -1,12 +1,14 @@
 package com.company;
 
+import java.net.Inet4Address;
+
 //if the class is public, it should be declared in a file
 //or remove public
 /*public */class Tank {
     int level;
 }
 
-public class Operator {
+class Operator {
     //Java别名机制
     public void test_assign_operator() {
         Tank t1 = new Tank();
@@ -102,5 +104,43 @@ public class Operator {
         //question:异或操作为啥是110，且没有f结尾
         System.out.println("i1 ^ i2 is " + Integer.toHexString((i1 ^ i2)));
         System.out.println("~ i1 is " + Integer.toHexString(~i1));
+    }
+
+    public void test_move_operator() {
+        int i = -1;
+        System.out.println("-1 is " + Integer.toBinaryString(i));
+        //有符号右移，负数高位补1
+        System.out.println("-1 >> 2 is " + Integer.toBinaryString(i >> 2) + ", " + Integer.toString(i >> 2));
+        System.out.println("-1 >>> 2 is " + Integer.toBinaryString(i >>> 2) + ", " + Integer.toString(i >>> 2));
+
+        i = 10;
+        System.out.println("15 is " + Integer.toBinaryString(i));
+        //有符号右移，正数高位补0
+        System.out.println("15 >> 2 is " + Integer.toBinaryString(i >> 2) + ", " + Integer.toString(i >> 2));
+        System.out.println("15 >>> 2 is " + Integer.toBinaryString(i >>> 2) + ", " + Integer.toString(i >>> 2));
+        //支持以为赋值操作
+        //i >>= 2;
+        //i >>>= 2;
+    }
+
+    public void test_string_operator() {
+        int x=0, y=1, z=2;
+        String s = "x, y, z";
+        //表达式以字符串开头，后面所有的操作数必须都是字符串
+        System.out.println(s + x + y + z);
+        System.out.println(s + (x + y + z));
+        System.out.println(x + "");//convert x to string
+        System.out.println("" + x);
+    }
+
+    public void test_cast_operator() {
+        double above = 0.7;
+        double below = 0.4;
+        //浮点数向正数转换时，总是执行截尾，即舍弃小数位
+        System.out.println("double above = 0.7, (int)above is " + (int)above);
+        System.out.println("double below = 0.4, (int)below is " + (int)below);
+        //如果需要如果需要四舍五入，需要使用Math.round函数
+        System.out.println("double above = 0.7, Math.round(above) is " + Math.round(above));
+        System.out.println("double below = 0.4, Math.round(below) is " + Math.round(below));
     }
 }
