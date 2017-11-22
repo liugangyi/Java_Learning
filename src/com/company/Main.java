@@ -1,7 +1,4 @@
 package com.company;
-import com.company.Container.*;
-import com.company.Tank.*;
-import com.company.RandomGenerate.*;
 
 public class Main {
 
@@ -10,7 +7,8 @@ public class Main {
         //test_container();
         //test_operator();
         //test_random();
-        test_base();
+        //test_base();
+        test_class_usage();
     }
 
     static void test_container() {
@@ -38,5 +36,13 @@ public class Main {
     static void test_base() {
         Base b = new Base();
         b.test_foreach();
+    }
+
+    static void test_class_usage() {
+        //为什么是用下面两条语句，就不能打印出错误信息？
+        //ClassUsage cls = new ClassUsage(true);
+        //cls.checkIn();
+        new ClassUsage().print_init_value();
+        System.gc();
     }
 }
