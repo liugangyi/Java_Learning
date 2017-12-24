@@ -8,7 +8,7 @@ final class Value {
     }
 }
 
-public class ClassFinal {
+public class Final {
     //final 作用于基本类型时，代表数值是恒定的编译期常量
     final int valueOne = 1;
     //既是static又是final的变量，占用一段不能改变的存储空间，通常用大写字母定义这样的变量
@@ -20,7 +20,7 @@ public class ClassFinal {
     //提高了灵活性，可以让域根据对象而有所不同，同时又保留了恒定不变的特性
     final int valueFour;
 
-    public ClassFinal() {
+    public Final() {
         valueFour = 1;
     }
     //final修饰方法时，禁止继承类对该方法的覆盖
